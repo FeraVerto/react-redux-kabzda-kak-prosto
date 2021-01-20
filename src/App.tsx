@@ -9,6 +9,8 @@ import {ControlledOnOff} from "./components/ControlledOnOff/ControlledOnOff";
 import {UncontrolledOnOff} from "./components/UncontrilledOnOff/UncontrolledOnOff";
 import Select from "./components/Select/Select";
 import {SelectVariant} from "./components/SelectVariant/SelectVariant";
+import {Clock} from "./components/Clock/Clock";
+import {AnalogClock} from "./components/AnalogClock/AnalogClock";
 
 function App() {
     console.log('App render')
@@ -31,7 +33,7 @@ function App() {
 
         <div>
 
-            <Select value={"ghbchgjdgf"}
+            {/*<Select value={"ghbchgjdgf"}
                     selectValue={selectValue}
                     setSelectValue={setSelectValue}
                     collapsed={collapsedSelect}
@@ -42,10 +44,12 @@ function App() {
                         {title: 'Valera', value: 3},
                         {title: 'Viktor', value: 4},
                     ]}/>
+*/}
 
+            <AnalogClock/>
             {/*<SelectVariant />*/}
 
-           {/* <Accordion title={'Page title no collapsed'}
+            {/* <Accordion title={'Page title no collapsed'}
                        collapsed={false}
                        setAccordionCollapsed={setCollapsed}
                        items={[
@@ -61,7 +65,7 @@ function App() {
             <ControlledOnOff on={on} setOn={setOn}/>
             <UncontrolledOnOff/>*/}
 
-{/*
+            {/*
             <PageTitle title={'У нас тут весело! Смотри сколько фигни:'}/>
 */}
 

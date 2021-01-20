@@ -1,27 +1,45 @@
 import React, {useEffect, useState} from 'react'
+import {DigitalClockView} from "./DigitalClockView";
+import {AnalogClockView} from "./AnalogClockView";
 
-type PropsType = {}
+type PropsType = {
+    mode: "digital" | "analog"
+}
+
+export type DigitalViewPropsType = {
+    date: Date
+}
+
+
 
 export const Clock: React.FC<PropsType> = (props) => {
 
     let [date, setDate] = useState(new Date())
 
     useEffect(() => {
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             setDate(new Date())
         }, 1000)
+
+        //setInterval нужно зачищать
+        //вызовется, когда компонент начнет умирать или перерисуется
+        return () => {
+            clearInterval(intervalId)
+        }
     }, [])
 
-    //можно положить в отдельную папку
-    const formatClock = (time: number) => {
-        return time < 10 ? "0" + time : time
-    }
 
     return (
         <div>
-            <span>{formatClock(date.getHours())}</span>:
-            <span>{formatClock(date.getMinutes())}</span>:
-            <span>{formatClock(date.getSeconds())}</span>
+            {props.mode === "digital"
+                ? <DigitalClockView date={date}/>
+                : <AnalogClockView date={date}/>
+            }
         </div>
     )
 }
+
+
+
+
+
