@@ -42,18 +42,17 @@ export const SimpleExample = () => {
     )
 }
 
+/*
 export const setTimeoutExample = () => {
     console.log("setTimeoutExample")
 
-    const [fake, setFake] = useState(1)
     const [counter, setCounter] = useState(1)
 
     let [dateHourse, setHourseDate] = useState<number>(+new Date().getHours())
     let [dateMinute, setMinuteDate] = useState<number>(+new Date().getMinutes())
     let [dateSeconds, setSecondsDate] = useState<number>(+new Date().getSeconds())
 
-    /*let [date, setDate] = useState<Date>()*/
-
+    /!*let [date, setDate] = useState<Date>()*!/
 
     useEffect(() => {
         //setInterval берет значение из замыкания, которое было при первом запуске, а это 1,
@@ -79,11 +78,11 @@ export const setTimeoutExample = () => {
 
     return (
         <>
-            {/*Hello, Fake: {fake} - Counter: {counter}*/}
+            {/!*Hello, Fake: {fake} - Counter: {counter}*!/}
             {`${dateHourse} : ${dateMinute} : ${dateSeconds}`}
-            {/*{date}*/}
-            {/*<button onClick={() => setCounter(counter + 1)}>Counter +</button>
-            <button onClick={() => setFake(fake + 1)}>Fake +</button>*/}
+            {/!*{date}*!/}
+            {/!*<button onClick={() => setCounter(counter + 1)}>Counter +</button>
+            <button onClick={() => setFake(fake + 1)}>Fake +</button>*!/}
         </>
     )
-}
+}*/
